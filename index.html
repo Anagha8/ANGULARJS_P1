@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="userApp">
+
+<head>
+    <meta charset="UTF-8">
+    <title>User Management</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400&display=swap" rel="stylesheet">
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body ng-controller="UserController">
+    <div class="navbar">
+        <div class="navbar-btn">
+            <input type="text" ng-model="searchName" placeholder="Search by Name">
+            <select ng-model="selectedDomain" ng-options="domain for domain in uniqueDomains">
+                <option value="">All Domains</option>
+            </select>
+            <select ng-model="selectedGender">
+                <option value="">All Genders</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+            <select ng-model="selectedavailable">
+                <option value="">All Availabilities</option>
+                <option value="true">true</option>
+                <option value="false">false</option>
+            </select>
+        </div>
+
+        <div class="pagination-controls">
+            <!-- Add pagination controls -->
+            <button ng-click="prevPage()" class="previous">Previous</button>
+            Page {{ currentPage }} of {{ totalPages }}
+            <button ng-click="nextPage()" class="next">Next</button>
+        </div>
+    </div>
+    
+    <div class="flex-container">
+        <div class="user-card-container">
+            <div ng-repeat="user in filteredUsers.slice((currentPage-1)*itemsPerPage, currentPage*itemsPerPage)">
+                <!-- Display user details in card format -->
+                <div class="user-card">
+                    <div class="user-card-left" style="float: left; margin-right: 10px;">
+                        <img src="{{ user.avatar }}" alt="{{ user.first_name }} {{ user.last_name }} Avatar"
+                            style="width: 50px; height: 50px; border-radius: 50%;">
+                        
+                        <button ng-click="addToTeam(user)" ng-show="user.available">Add to Team</button>
+                    </div>
+                    <div class="user-card-right">
+                        <p>ID: {{ user.id }}</p>
+                        <p>Name: {{ user.first_name }} {{ user.last_name }}</p>
+                        <p>Email: {{ user.email }}</p>
+                        <p>Domain: {{ user.domain }}</p>
+                        <p>Gender: {{ user.gender }}</p>
+                        <p>Available: {{ user.available }}</p>
+                        </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="team-details-container">
+            <h2>TEAM DETAILS</h2>
+            <div ng-show="team.length > 0" class="team-details-body">
+                <!-- Display team details -->
+                <ul>
+                    <li ng-repeat="teamMember in team">{{ teamMember.first_name }} {{ teamMember.last_name }} - {{ teamMember.domain }}</li>
+                </ul>
+            </div>
+
+            
+        </div>
+    </div>
+
+    
+
+</body>
+
+</html>
