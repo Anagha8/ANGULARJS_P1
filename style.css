@@ -1,0 +1,252 @@
+/* Add your styles for user cards and other elements */
+/* Add your styles for user cards and other elements */
+.navbar {
+    display: flex;
+    flex-direction: row;
+    padding-top: 0;
+    margin: 2px;
+    margin-top: 0;
+    height: 6vh;
+    background-color: lightblue; /* Light blue background color for the navbar */
+    border-radius: 10px; /* Border radius for rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Box shadow for a subtle shadow effect */
+}
+
+.navbar-btn {
+    width: 50vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.navbar-btn a {
+    height: 100%; /* Make the anchor tags take the full height of the navbar */
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem; /* Adjust the font size as needed */
+    color: white; /* Text color for the links */
+    text-decoration: none;
+    padding: 0 10px;
+    border-radius: 5px; /* Optional: Add border radius for a rounded look */
+}
+
+.navbar-btn a:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Add a background color on hover */
+}
+
+/* Add your styles for pagination-controls and other elements */
+/* Add your styles for pagination-controls and other elements */
+.pagination-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.pagination-controls a {
+    margin: 0 5px;
+    padding: 8px 12px;
+    text-decoration: none;
+    background-color: lightblue; /* Light blue background color for the pagination links */
+    color: white; /* Text color for the pagination links */
+    border-radius: 5px; /* Optional: Add border radius for a rounded look */
+    font-size: 10px; /* Adjust the font size as needed */
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.pagination-controls a:hover {
+    background-color: rgba(173, 216, 230, 0.8); /* Add a background color on hover */
+}
+
+.pagination-controls .active {
+    background-color: steelblue; /* Background color for the active pagination link */
+    pointer-events: none; /* Disable pointer events on the active link */
+}
+
+/* Increase space between pagination elements */
+.pagination-controls .previous,
+.pagination-controls .next {
+    margin: 0 15px; /* Adjust the margin as needed */
+    padding-bottom: 10px;
+}
+
+.pagination-controls button
+{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px; /* Adjusted font size for the button */
+    border-color: rgb(72, 28, 233);
+    border-radius: 0;
+    color:  rgb(72, 28, 233);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: color 150ms ease-in-out;
+
+    &:after {
+        content: '';
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 100%;
+        background:  rgb(72, 28, 233);
+        z-index: -1;
+        transition: width 150ms ease-in-out;
+    }
+
+    &:hover {
+        color: #fff;
+        &:after {
+            width: 110%;
+        }
+    }
+}
+
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 15px;
+}
+
+.user-card-container {
+    width: 75vw;
+    max-height: 90vh; /* Set maximum height for scrolling */
+    overflow-y: auto; /* Add scrolling for overflow content */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Adjust this as needed */
+    box-sizing: border-box;
+    border: 3px solid rgb(48, 44, 44);
+    border-radius: 10px;
+    padding: 10px; /* Added padding for better spacing */
+}
+
+.user-card {
+    border: 3px solid rgb(14, 13, 13);
+    border-radius: 8px;
+    box-shadow: 5px 5px #888888;
+    padding: 20px; /* Increased padding for better spacing */
+    margin: 10px;
+    width: 30vw;
+    height: 41vh;
+    box-sizing: border-box;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.user-card p
+{
+    font-family:"Kanit", sans-serif;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.user-card-left
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.user-card-right
+{
+    align-items: center;
+    justify-content: center;
+}
+
+/* Give each card a different background color */
+.user-card:nth-child(1) {
+    background-color: #FFB6C1; /* Light pink for the first card */
+}
+
+.user-card:nth-child(2) {
+    background-color: #ADD8E6; /* Light blue for the second card */
+}
+
+.user-card:nth-child(3) {
+    background-color: #FFFFE0; /* Light yellow for the third card */
+}
+
+.user-card:nth-child(4) {
+    background-color: #98FB98; /* Light green for the fourth card */
+}
+
+.user-card img {
+    width: 100px; /* Increased image size */
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 20px; /* Increased margin below the image */
+}
+
+.user-card p {
+    font-size: 15px; /* Adjusted font size for better readability */
+}
+
+.user-card button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px; /* Adjusted font size for the button */
+    border-color: purple;
+    border-radius: 0;
+    color: purple;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: color 150ms ease-in-out;
+
+    &:after {
+        content: '';
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 100%;
+        background: purple;
+        z-index: -1;
+        transition: width 150ms ease-in-out;
+    }
+
+    &:hover {
+        color: #fff;
+        &:after {
+            width: 110%;
+        }
+    }
+}
+
+.team-details-container {
+    flex-basis: 30%; /* Adjust the width of the team details section as needed */
+    margin-left: 20px; /* Add some margin between user cards and team details */
+    align-items: center;
+    justify-content: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+    border: 3px solid rgb(48, 44, 44);
+    border-radius: 10px;
+    padding: 10px; /* Added padding for better spacing */
+}
+
+.team-details-container h2 {
+    text-align: center; /* Align the heading to the center */
+}
+
+.team-details-body
+{
+    margin: 5px;
+    background-color: #FFB6C1;
+    border-radius: 5px;
+    border: #faa7b3;
+}
